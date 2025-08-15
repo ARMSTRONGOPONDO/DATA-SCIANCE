@@ -1,4 +1,4 @@
-.PHONY: setup clean data train evaluate install test lint format
+.PHONY: setup clean data train evaluate install lint format
 
 # Default target
 all: clean setup data train evaluate
@@ -34,17 +34,13 @@ evaluate:
 install:
 	pip install -e .
 
-# Run tests (if you add tests later)
-test:
-	pytest tests/
-
 # Lint code using flake8
 lint:
 	flake8 src/
 
 # Format code using black
 format:
-	black src/ tests/
+	black src/
 
 # Create a new notebook
 notebook:
